@@ -7,14 +7,16 @@ import lombok.Data;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import static ru.practicum.main.util.Constants.DATE_TIME_PATTERN;
+
 @Data
 @Builder
 public class ApiError {
-    List<StackTraceElement> errors;
+    private List<StackTraceElement> errors;
     private String status;
     private String reason;
     private String message;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = DATE_TIME_PATTERN)
     private LocalDateTime timestamp;
 }
 

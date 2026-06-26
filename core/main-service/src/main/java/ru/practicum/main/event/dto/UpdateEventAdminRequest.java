@@ -14,6 +14,8 @@ import ru.practicum.main.event.model.StateAdminAction;
 
 import java.time.LocalDateTime;
 
+import static ru.practicum.main.util.Constants.DATE_TIME_PATTERN;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -30,7 +32,7 @@ public class UpdateEventAdminRequest {
     private String description;
 
     @Future
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", shape = JsonFormat.Shape.STRING)
+    @JsonFormat(pattern = DATE_TIME_PATTERN, shape = JsonFormat.Shape.STRING)
     private LocalDateTime eventDate;
 
     private Location location;

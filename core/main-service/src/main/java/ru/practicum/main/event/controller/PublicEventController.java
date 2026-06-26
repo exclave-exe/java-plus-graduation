@@ -17,6 +17,8 @@ import ru.practicum.main.exception.BadRequestException;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import static ru.practicum.main.util.Constants.DATE_TIME_PATTERN;
+
 @RestController
 @RequestMapping("/events")
 @Validated
@@ -32,9 +34,9 @@ public class PublicEventController {
                                          @RequestParam(required = false) List<Long> categories,
                                          @RequestParam(required = false) Boolean paid,
                                          @RequestParam(required = false)
-                                         @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime rangeStart,
+                                         @DateTimeFormat(pattern = DATE_TIME_PATTERN) LocalDateTime rangeStart,
                                          @RequestParam(required = false)
-                                         @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime rangeEnd,
+                                         @DateTimeFormat(pattern = DATE_TIME_PATTERN) LocalDateTime rangeEnd,
                                          @RequestParam(defaultValue = "false") Boolean onlyAvailable,
                                          @RequestParam(required = false) String sort,
                                          @RequestParam(defaultValue = "0") @PositiveOrZero int from,

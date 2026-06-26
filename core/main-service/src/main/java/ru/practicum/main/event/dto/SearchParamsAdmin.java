@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import static ru.practicum.main.util.Constants.DATE_TIME_PATTERN;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -19,10 +21,10 @@ public class SearchParamsAdmin {
     private List<String> states;
     private List<Long> categories;
 
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", shape = JsonFormat.Shape.STRING)
+    @JsonFormat(pattern = DATE_TIME_PATTERN, shape = JsonFormat.Shape.STRING)
     private LocalDateTime rangeStart;
 
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", shape = JsonFormat.Shape.STRING)
+    @JsonFormat(pattern = DATE_TIME_PATTERN, shape = JsonFormat.Shape.STRING)
     private LocalDateTime rangeEnd;
 
     @PositiveOrZero
